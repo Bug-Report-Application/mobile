@@ -1,9 +1,9 @@
-name: lint
+name: Eslint and Prettier
 
 on: [pull_request]
 
 jobs:
-  list:
+  lint:
     runs-on: ubuntu-latest
 
     strategy:

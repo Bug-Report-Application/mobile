@@ -1,3 +1,5 @@
-Thank you for your contribution to the Bug Report Application.
+See the description of everything that was done by clicking on the trello link:
 
-[Task trello](https://trello.com/c/ErdMxcq4/4-feat04-estrutura%C3%A7%C3%A3o-do-projeto-e-dep%C3%B3sito-no-github)
+[Task trello](link_task_trello)
+
+Thank you for your contribution to the Bug Report Application.

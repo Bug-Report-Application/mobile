@@ -1,0 +1,12 @@
+name: Auto merge
+
+on:
+  merge:
+    branches: develop
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run script
+        run: echo testando

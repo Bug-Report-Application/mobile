@@ -15,5 +15,5 @@ jobs:
         uses: Bug-Report-Application/bug-report-application-mobile@develop
         with:
           label_name: 'merged in homolog'
-          target_branch: 'homolog'
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: 'homolog'

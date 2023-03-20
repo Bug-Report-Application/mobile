@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true,
   },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'airbnb'],
   overrides: [],
@@ -12,6 +13,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'react/prop-types': 0,
     semi: 'error',
     quotes: [
       'error',
@@ -19,6 +21,12 @@ module.exports = {
       {
         avoidEscape: true,
         allowTemplateLiterals: true,
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
       },
     ],
     'object-curly-spacing': ['error', 'always'],
@@ -38,5 +46,12 @@ module.exports = {
     'no-multiple-empty-lines': 'error',
     'no-trailing-spaces': 'error',
     'no-duplicate-imports': 'error',
+    'max-len': [
+      'error',
+      {
+        ignoreComments: true,
+      },
+    ],
+    'comma-dangle': ['error', 'only-multiline'],
   },
 };

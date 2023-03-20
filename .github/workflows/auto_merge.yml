@@ -12,9 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: homolog
-          run: |
-            git config user.name diegomunizdev
-            git config user.email diegomunizdev@outlook.com
-            git merge develop
-            git push
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          type: now
+          from_branch: develop
+          target_branch: homolog

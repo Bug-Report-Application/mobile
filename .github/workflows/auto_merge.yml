@@ -1,0 +1,20 @@
+name: Auto merge
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - closed
+
+jobs:
+  auto_merge:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - with:
+          type: now
+          from_branch: develop
+          target_branch: homolog
+          github_token: ${{ secrets.GITHUB_TOKEN }}

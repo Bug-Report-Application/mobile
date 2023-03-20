@@ -14,7 +14,6 @@ jobs:
       - name: Merge develop -> homolog
         uses: Bug-Report-Application/bug-report-application-mobile@develop
         with:
-          type: now
-          from_branch: develop
-          target_branch: homolog
+          label_name: 'merged in homolog'
+          target_branch: 'homolog'
           github_token: ${{ secrets.GITHUB_TOKEN }}

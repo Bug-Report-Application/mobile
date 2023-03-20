@@ -2,6 +2,8 @@ name: Auto merge
 
 on:
   pull_request:
+    branches:
+      - develop
     types:
       - closed
 
@@ -11,10 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - with:
-          ref: homolog
       - run: |
           git config user.name diegomunizdev
           git config user.email diegomunizdev@outlook.com
+          git checkout homolog
           git merge develop
           git push

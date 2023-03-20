@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          type: now
-          from_branch: develop
-          target_branch: homolog
+      - with:
+          ref: homolog
+      - run: |
+          git config user.name diegomunizdev
+          git config user.email diegomunizdev@outlook.com
+          git merge develop
+          git push

@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true,
   },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'airbnb'],
   overrides: [],
@@ -38,5 +39,17 @@ module.exports = {
     'no-multiple-empty-lines': 'error',
     'no-trailing-spaces': 'error',
     'no-duplicate-imports': 'error',
+    'max-len': [
+      'error',
+      {
+        ignoreComments: true,
+      },
+    ],
   },
+  'import/no-extraneous-dependencies': [
+    'error',
+    {
+      devDependencies: ['**/*.spec.jsx'],
+    },
+  ],
 };

@@ -4,21 +4,20 @@ import ThemeProvider from './ThemeProvider';
 import AppRoutes from './AppRoutes';
 
 jest.mock('react-i18next', () => ({
-  useTranslation: () => {
-    return {
-      t: (str) => str,
-    };
-  },
+  useTranslation: () => ({
+    t: (str) => str,
+  }),
 }));
 
-describe('<AppRoutes />', () => {
-  const setup = () =>
-    render(
-      <ThemeProvider>
-        <AppRoutes />
-      </ThemeProvider>
-    );
+function setup() {
+  return render(
+    <ThemeProvider>
+      <AppRoutes />
+    </ThemeProvider>
+  );
+}
 
+describe('<AppRoutes />', () => {
   describe('When to render the application', () => {
     it('then the title should appear', () => {
       const { getByText } = setup();

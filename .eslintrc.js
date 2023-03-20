@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'react/prop-types': 0,
     semi: 'error',
     quotes: [
       'error',
@@ -20,6 +21,12 @@ module.exports = {
       {
         avoidEscape: true,
         allowTemplateLiterals: true,
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
       },
     ],
     'object-curly-spacing': ['error', 'always'],
@@ -45,11 +52,6 @@ module.exports = {
         ignoreComments: true,
       },
     ],
+    'comma-dangle': ['error', 'only-multiline'],
   },
-  'import/no-extraneous-dependencies': [
-    'error',
-    {
-      devDependencies: ['**/*.spec.jsx'],
-    },
-  ],
 };

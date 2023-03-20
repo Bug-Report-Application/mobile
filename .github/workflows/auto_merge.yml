@@ -6,9 +6,15 @@ on:
       - closed
 
 jobs:
-  if_merged:
+  auto_merge:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo The PR was merged
+      - uses: actions/checkout@develop
+      - name: Merge develop -> homolog
+        uses: Bug-Report-Application/bug-report-application-mobile@develop
+        with:
+          type: now
+          from_branch: develop
+          target_branch: homolog
+          github_token: ${{ secrets.GITHUB_TOKEN }}

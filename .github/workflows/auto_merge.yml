@@ -10,10 +10,11 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@develop
-      - name: Merge develop -> homolog
-        uses: Bug-Report-Application/bug-report-application-mobile@develop
+      - uses: actions/checkout@v3
         with:
-          label_name: 'merged in homolog'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          target_branch: 'homolog'
+          ref: homolog
+          run: |
+            git config user.name diegomunizdev
+            git config user.email diegomunizdev@outlook.com
+            git merge develop
+            git push

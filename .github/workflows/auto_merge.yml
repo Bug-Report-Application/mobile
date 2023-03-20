@@ -16,5 +16,6 @@ jobs:
       - run: |
           git config user.name diegomunizdev
           git config user.email diegomunizdev@outlook.com
+          git checkout homolog
           git merge develop
           git push

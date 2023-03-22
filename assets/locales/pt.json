@@ -1,3 +1,9 @@
 {
-  "appTitle": "Bug Report"
+  "appTitle": "Bug Report",
+  "escapeViews": {
+    "maintenence": {
+      "title": "Ops... Estamos em manutenção",
+      "subtitle": "Estamos realizando melhorias para o aplicativo ficar cada vez melhor para você. Volte aqui em alguns instantes."
+    }
+  }
 }

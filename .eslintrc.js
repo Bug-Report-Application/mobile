@@ -39,6 +39,13 @@ module.exports = {
         },
       },
     ],
+    'max-len': [
+      'error',
+      {
+        ignoreComments: true,
+        code: 200,
+      },
+    ],
     curly: ['error', 'multi'],
     eqeqeq: ['error', 'always'],
     'no-extra-semi': 'error',
@@ -46,12 +53,9 @@ module.exports = {
     'no-multiple-empty-lines': 'error',
     'no-trailing-spaces': 'error',
     'no-duplicate-imports': 'error',
-    'max-len': [
-      'error',
-      {
-        ignoreComments: true,
-      },
-    ],
     'comma-dangle': ['error', 'only-multiline'],
+    'import/prefer-default-export': 'off',
+    'arrow-body-style': ['error', 'as-needed'],
+    'implicit-arrow-linebreak': ['error', 'beside'],
   },
 };

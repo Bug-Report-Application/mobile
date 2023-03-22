@@ -1,6 +1,7 @@
 import React from 'react';
+import './i18n';
 import ThemeProvider from './src/ThemeProvider';
-import AppRoutes from './src/AppRoutes';
+import { AppRoutes } from './src/AppRoutes';
 
 export default function App() {
   return (

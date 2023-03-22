@@ -4,6 +4,18 @@ import { NativeBaseProvider, extendTheme } from 'native-base';
 export default function ThemeProvider({ children }) {
   const theme = extendTheme({
     colors: {
+      text: {
+        50: '#ffffff',
+        100: '#f2f2f2',
+        200: '#e6e6e6',
+        300: '#d9d9d9',
+        400: '#cccccc',
+        500: '#bfbfbf',
+        600: '#b3b3b3', // primary color
+        700: '#999999',
+        800: '#808080',
+        900: '#666666',
+      },
       primary: {
         50: '#a9ddef',
         100: '#a9ddef',

@@ -1,15 +1,10 @@
 import React from 'react';
 import { VStack } from 'native-base';
-import { MaintenenceOrganisms } from '../../organisms/escapes/Maintenence.organism';
+import { MaintenenceOrganisms } from '../../organisms';
 
 export function MaintenenceTemplate() {
   return (
-    <VStack
-      testID="Maintenence-template_center"
-      flex={1}
-      px={10}
-      backgroundColor="light.50"
-    >
+    <VStack testID="Maintenence-template_vstack" flex={1}>
       <MaintenenceOrganisms />
     </VStack>
   );

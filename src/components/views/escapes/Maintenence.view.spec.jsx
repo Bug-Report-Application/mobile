@@ -2,7 +2,7 @@ import React from 'react';
 import { Text as MockText } from 'react-native';
 import { render } from '@testing-library/react-native';
 import ThemeProvider from '../../../ThemeProvider';
-import { MaintenenceTemplate } from './Maintenence.template';
+import { MaintenenceView } from './Maintenence.view';
 
 jest.mock('../../../../assets/images/escapes/maintenence-icon.png', () => ({
   ...jest.requireActual(
@@ -20,16 +20,21 @@ jest.mock('react-i18next', () => ({
 function setup() {
   return render(
     <ThemeProvider>
-      <MaintenenceTemplate />
+      <MaintenenceView />
     </ThemeProvider>
   );
 }
 
-describe('<MaintenenceTemplate />', () => {
+describe('<MaintenenceView />', () => {
   describe('When to render the component', () => {
     it('then the title should appear content', () => {
       const { getByTestId } = setup();
-      getByTestId('Maintenence-template_vstack');
+      getByTestId('Maintenence-view_vstack');
+    });
+
+    it('then the title should appear background image', () => {
+      const { getByTestId } = setup();
+      getByTestId('Maintenence-view_backgroundImage');
     });
   });
 });

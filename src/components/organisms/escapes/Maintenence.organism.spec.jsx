@@ -5,9 +5,7 @@ import ThemeProvider from '../../../ThemeProvider';
 import { MaintenenceOrganisms } from './Maintenence.organism';
 
 jest.mock('../../../../assets/images/escapes/maintenence-icon.png', () => ({
-  ...jest.requireActual(
-    '../../../../assets/images/escapes/maintenence-icon.png'
-  ),
+  ...jest.requireActual('../../../../assets/images/escapes/maintenence-icon.png'),
   MockText: () => <MockText>MOCK-TEXT</MockText>,
 }));
 
@@ -17,13 +15,13 @@ jest.mock('react-i18next', () => ({
   }),
 }));
 
-function setup() {
+const setup = () => {
   return render(
     <ThemeProvider>
       <MaintenenceOrganisms />
     </ThemeProvider>
   );
-}
+};
 
 describe('<MaintenenceOrganisms />', () => {
   describe('When to render the component', () => {

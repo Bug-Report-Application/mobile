@@ -1,13 +1,11 @@
 import React from 'react';
-import { Text as MockText } from 'react-native';
 import { render } from '@testing-library/react-native';
-import ThemeProvider from '../../../ThemeProvider';
+import { Text as MockText } from 'react-native';
 import { MaintenenceTemplate } from './Maintenence.template';
+import ThemeProvider from '../../../ThemeProvider';
 
 jest.mock('../../../../assets/images/escapes/maintenence-icon.png', () => ({
-  ...jest.requireActual(
-    '../../../../assets/images/escapes/maintenence-icon.png'
-  ),
+  ...jest.requireActual('../../../../assets/images/escapes/maintenence-icon.png'),
   MockText: () => <MockText>MOCK-TEXT</MockText>,
 }));
 
@@ -17,13 +15,13 @@ jest.mock('react-i18next', () => ({
   }),
 }));
 
-function setup() {
+const setup = () => {
   return render(
     <ThemeProvider>
       <MaintenenceTemplate />
     </ThemeProvider>
   );
-}
+};
 
 describe('<MaintenenceTemplate />', () => {
   describe('When to render the component', () => {

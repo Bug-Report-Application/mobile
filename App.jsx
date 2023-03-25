@@ -1,5 +1,5 @@
 import React from 'react';
-import './i18n';
+import './src/i18n';
 import ThemeProvider from './src/ThemeProvider';
 import { AppRoutes } from './src/AppRoutes';
 

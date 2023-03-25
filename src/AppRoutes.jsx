@@ -9,11 +9,7 @@ const Stack = createNativeStackNavigator();
 export function AppRoutes() {
   return (
     <>
-      <StatusBar
-        backgroundColor="#f2f2f2"
-        hidden={false}
-        barStyle="dark-content"
-      />
+      <StatusBar backgroundColor="#f2f2f2" hidden={false} barStyle="dark-content" />
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Maintenence"

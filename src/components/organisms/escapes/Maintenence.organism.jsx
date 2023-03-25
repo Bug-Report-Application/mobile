@@ -4,12 +4,7 @@ import { MaintenenceMolecule } from '../../molecules';
 
 export function MaintenenceOrganisms() {
   return (
-    <Center
-      testID="Maintenence-organism_center"
-      flex={1}
-      justifyContent="center"
-      px={10}
-    >
+    <Center testID="Maintenence-organism_center" flex={1} justifyContent="center" px={10}>
       <MaintenenceMolecule />
     </Center>
   );

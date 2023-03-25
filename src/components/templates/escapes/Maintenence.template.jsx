@@ -1,6 +1,6 @@
 import React from 'react';
-import { VStack } from 'native-base';
 import { MaintenenceOrganisms } from '../../organisms';
+import { VStack } from 'native-base';
 
 export function MaintenenceTemplate() {
   return (

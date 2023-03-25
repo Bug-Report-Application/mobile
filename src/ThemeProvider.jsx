@@ -11,10 +11,10 @@ export default function ThemeProvider({ children }) {
         300: '#d9d9d9',
         400: '#cccccc',
         500: '#bfbfbf',
-        600: '#b3b3b3', // primary color
+        600: '#b3b3b3',
         700: '#999999',
         800: '#808080',
-        900: '#666666',
+        900: '#666666', // text color
       },
       primary: {
         50: '#a9ddef',

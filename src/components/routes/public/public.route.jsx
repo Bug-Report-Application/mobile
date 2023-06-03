@@ -42,7 +42,7 @@ export function PublicRoutes() {
         <Stack.Navigator
           initialRouteName={AuthRoutes.LOGIN}
           screenOptions={{
-            animation: 'fade',
+            animation: 'fade_from_bottom',
           }}
         >
           {publicRoutes

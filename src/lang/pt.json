@@ -22,7 +22,8 @@
       "button": {
         "send": "ENVIAR",
         "back": "Voltar"
-      }
+      },
+      "info": "Se o e-mail cadastrado for encontrado, você receberá um e-mail com as informações para redefinir a senha."
     }
   },
   "form": {

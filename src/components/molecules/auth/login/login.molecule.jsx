@@ -2,9 +2,10 @@ import React from 'react';
 import { Box, Button, FormControl, Heading, Input } from 'native-base';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
+
 import { useAuthContext } from '../../../contexts';
 import { AuthRoutes } from '../../../constants';
-import { useTranslation } from 'react-i18next';
 
 export function LoginMolecule() {
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ export function LoginMolecule() {
               size="lg"
               value={value ?? ''}
               onChangeText={onChange}
-              variant="underlined"
+              variant="outline"
               isRequired
             />
             {error ? <FormControl.ErrorMessage>{error.message}</FormControl.ErrorMessage> : null}
@@ -42,7 +43,7 @@ export function LoginMolecule() {
         name="password"
         control={control}
         render={({ field: { name, value, onChange }, fieldState: { error } }) => (
-          <FormControl isInvalid={error} mb="16">
+          <FormControl isInvalid={error} mb="10">
             <FormControl.Label>{t('authViews.login.password')}</FormControl.Label>
             <Input
               name={name}
@@ -50,7 +51,7 @@ export function LoginMolecule() {
               size="lg"
               value={value ?? ''}
               onChangeText={onChange}
-              variant="underlined"
+              variant="outline"
               isRequired
             />
             {error ? <FormControl.ErrorMessage>{error.message}</FormControl.ErrorMessage> : null}

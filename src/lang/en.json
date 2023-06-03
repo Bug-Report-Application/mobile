@@ -22,7 +22,8 @@
       "button": {
         "send": "SEND",
         "back": "Go back"
-      }
+      },
+      "info": "If the registered email is found, you will receive an email with the information to reset the password."
     }
   },
   "form": {

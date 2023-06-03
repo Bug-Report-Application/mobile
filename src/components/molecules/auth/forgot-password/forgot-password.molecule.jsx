@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Button, FormControl, Heading, Input } from 'native-base';
+import { useTranslation } from 'react-i18next';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
+import { Alert, Box, Button, FormControl, HStack, Heading, Input, Text } from 'native-base';
+
 import { useAuthContext } from '../../../contexts';
 import { AuthRoutes } from '../../../constants';
-import { useTranslation } from 'react-i18next';
 
 export function ForgotPasswordMolecule() {
   const { signIn } = useAuthContext();
@@ -30,13 +31,20 @@ export function ForgotPasswordMolecule() {
               size="lg"
               value={value ?? ''}
               onChangeText={onChange}
-              variant="underlined"
+              variant="outline"
               isRequired
             />
             {error ? <FormControl.ErrorMessage>{error.message}</FormControl.ErrorMessage> : null}
           </FormControl>
         )}
       />
+
+      <Alert w="100%" variant="outline" mb={5} colorScheme="info" status="info">
+        <HStack alignItems="center" space={4} p={2}>
+          <Alert.Icon />
+          <Text>{t('authViews.forgotPassword.info')}</Text>
+        </HStack>
+      </Alert>
 
       <Button
         testID="login_btn-enter"

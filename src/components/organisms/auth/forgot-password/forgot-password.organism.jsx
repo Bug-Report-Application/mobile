@@ -1,11 +1,11 @@
 import React from 'react';
 import { Center } from 'native-base';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { ForgotPasswordMolecule } from '../../../molecules';
-import { useTranslation } from 'react-i18next';
 
 export function ForgotPasswordOrganism() {
   const { t } = useTranslation();
@@ -26,7 +26,7 @@ export function ForgotPasswordOrganism() {
 
   return (
     <>
-      <Center testID="Forgot-password-template_Center" flex={1} p={10}>
+      <Center testID="Forgot-password-organism_Center" flex={1} p={10}>
         <FormProvider {...formMethods}>
           <ForgotPasswordMolecule />
         </FormProvider>

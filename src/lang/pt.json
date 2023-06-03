@@ -5,5 +5,33 @@
       "title": "Ops... Estamos em manutenção",
       "subtitle": "Estamos realizando melhorias para o aplicativo ficar cada vez melhor para você. Volte aqui em alguns instantes."
     }
+  },
+  "authViews": {
+    "login": {
+      "title": "Seja bem-vindo!",
+      "email": "E-mail",
+      "password": "Senha",
+      "button": {
+        "enter": "ENTRAR",
+        "forgotPassword": "Esqueci a senha"
+      }
+    },
+    "forgotPassword": {
+      "title": "Recupere sua senha!",
+      "email": "E-mail",
+      "button": {
+        "send": "ENVIAR",
+        "back": "Voltar"
+      }
+    }
+  },
+  "form": {
+    "required": "{{field}} é obrigatório.",
+    "format": "O formato do campo é inválido."
+  },
+  "language": {
+    "select": "Selecione o idioma",
+    "english": "Inglês",
+    "portuguese": "Português"
   }
 }

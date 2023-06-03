@@ -1,1 +1,1 @@
-export * from './Maintenence.view';
+export * from './maintenence';

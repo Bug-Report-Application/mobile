@@ -5,5 +5,33 @@
       "title": "Ops... We are in maintenance",
       "subtitle": "We're making improvements to make the app better and better for you. Come back here in a moment."
     }
+  },
+  "authViews": {
+    "login": {
+      "title": "Welcome!",
+      "email": "E-mail",
+      "password": "Password",
+      "button": {
+        "enter": "LOGIN",
+        "forgotPassword": "Forgot password"
+      }
+    },
+    "forgotPassword": {
+      "title": "Recover your password!",
+      "email": "E-mail",
+      "button": {
+        "send": "SEND",
+        "back": "Go back"
+      }
+    }
+  },
+  "form": {
+    "required": "{{field}} is required.",
+    "format": "The field format is invalid."
+  },
+  "language": {
+    "select": "Select language",
+    "english": "English",
+    "portuguese": "Portuguese"
   }
 }

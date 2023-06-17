@@ -1,16 +1,22 @@
 import React from 'react';
-import { Button, Center, Text } from 'native-base';
-import { useAuthContext } from '../../contexts';
+import { Avatar, Text, VStack, theme } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
+
+import { TouchableOpacity } from 'react-native';
 
 export function HomeTemplate() {
-  const { signOut } = useAuthContext();
+  const { navigate } = useNavigation();
 
   return (
-    <Center testID="Home-template_Center" flex={1}>
-      <Text textAlign="center">
-        Tela inicial da aplicação. O usuário será redirecionado para esta tela.
-      </Text>
-      <Button onPress={signOut}>Sair</Button>
-    </Center>
+    <VStack testID="Home-template_VStack" flex={1}>
+      <VStack p={5} backgroundColor={theme.colors.primary[800]}>
+        <TouchableOpacity onPress={() => navigate('Account')}>
+          <Avatar bg="secondary.800">DM</Avatar>
+        </TouchableOpacity>
+        <Text mt={5} color={theme.colors.white} fontSize="lg">
+          Olá, Diego Muniz
+        </Text>
+      </VStack>
+    </VStack>
   );
 }

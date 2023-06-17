@@ -2,7 +2,8 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeView, MaintenenceView } from '../../views';
+import { theme } from 'native-base';
+import { AccountView, HomeView, MaintenenceView } from '../../views';
 import { EscapeRoutes } from '../../constants';
 
 const Stack = createNativeStackNavigator();
@@ -15,6 +16,18 @@ export function PrivateRoutes() {
       featureFlag: false,
       options: {
         headerShown: false,
+        statusBarColor: theme.colors.primary[800],
+      },
+    },
+    {
+      name: 'Account',
+      component: AccountView,
+      featureFlag: false,
+      options: {
+        headerShown: false,
+        statusBarColor: theme.colors.white,
+        statusBarStyle: 'dark',
+        animation: 'fade_from_bottom',
       },
     },
     {

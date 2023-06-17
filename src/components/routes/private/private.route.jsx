@@ -3,8 +3,18 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { theme } from 'native-base';
-import { AccountView, HomeView, MaintenenceView } from '../../views';
+
 import { EscapeRoutes } from '../../constants';
+import {
+  AboutView,
+  AccountView,
+  HomeView,
+  MaintenenceView,
+  NotificationsView,
+  ProfileView,
+  SecurityView,
+  SettingsView,
+} from '../../views';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +30,17 @@ export function PrivateRoutes() {
       },
     },
     {
+      name: 'About',
+      component: AboutView,
+      featureFlag: false,
+      options: {
+        headerShown: false,
+        statusBarColor: theme.colors.white,
+        statusBarStyle: 'dark',
+        animation: 'fade',
+      },
+    },
+    {
       name: 'Account',
       component: AccountView,
       featureFlag: false,
@@ -28,6 +49,50 @@ export function PrivateRoutes() {
         statusBarColor: theme.colors.white,
         statusBarStyle: 'dark',
         animation: 'fade_from_bottom',
+      },
+    },
+    {
+      name: 'Profile',
+      component: ProfileView,
+      featureFlag: false,
+      options: {
+        headerShown: false,
+        statusBarColor: theme.colors.white,
+        statusBarStyle: 'dark',
+        animation: 'fade',
+      },
+    },
+    {
+      name: 'Security',
+      component: SecurityView,
+      featureFlag: false,
+      options: {
+        headerShown: false,
+        statusBarColor: theme.colors.white,
+        statusBarStyle: 'dark',
+        animation: 'fade',
+      },
+    },
+    {
+      name: 'Settings',
+      component: SettingsView,
+      featureFlag: false,
+      options: {
+        headerShown: false,
+        statusBarColor: theme.colors.white,
+        statusBarStyle: 'dark',
+        animation: 'fade',
+      },
+    },
+    {
+      name: 'Notifications',
+      component: NotificationsView,
+      featureFlag: false,
+      options: {
+        headerShown: false,
+        statusBarColor: theme.colors.white,
+        statusBarStyle: 'dark',
+        animation: 'fade',
       },
     },
     {

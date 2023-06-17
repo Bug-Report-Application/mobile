@@ -7,16 +7,17 @@ import { TouchableOpacity } from 'react-native';
 import { useAuthContext } from '../../contexts';
 
 export function AccountView() {
-  const { goBack } = useNavigation();
+  const { goBack, navigate } = useNavigation();
   const { signOut } = useAuthContext();
 
   const data = [
     {
       id: 1,
       title: 'Perfil',
-      subtitle: 'Dados da conta',
+      subtitle: 'Visualize e edite suas informações',
       iconName: 'person',
       arrowRightIcon: true,
+      onPress: () => navigate('Profile'),
     },
     {
       id: 2,
@@ -24,13 +25,15 @@ export function AccountView() {
       subtitle: 'Dados da acesso e mais',
       iconName: 'security',
       arrowRightIcon: true,
+      onPress: () => navigate('Security'),
     },
     {
       id: 3,
       title: 'Configurações',
-      subtitle: 'Selecione o idioma, tema',
+      subtitle: 'Aplicativo, layout e mais',
       iconName: 'settings',
       arrowRightIcon: true,
+      onPress: () => navigate('Settings'),
     },
     {
       id: 4,
@@ -38,6 +41,7 @@ export function AccountView() {
       subtitle: 'Informações do aplicativo',
       iconName: 'info-outline',
       arrowRightIcon: true,
+      onPress: () => navigate('About'),
     },
   ];
 
@@ -46,15 +50,23 @@ export function AccountView() {
       <VStack p={5} backgroundColor={theme.colors.white}>
         <HStack alignItems="center" justifyContent="space-between">
           <TouchableOpacity onPress={goBack}>
-            <MaterialIcons name="close" size={28} />
+            <MaterialIcons name="close" size={28} color={theme.colors.text[500]} />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <MaterialIcons name="notifications-none" size={28} />
+          <TouchableOpacity onPress={() => navigate('Notifications')}>
+            <MaterialIcons name="notifications-none" size={28} color={theme.colors.text[500]} />
           </TouchableOpacity>
         </HStack>
-        <Avatar mt={5} size="md" bg="secondary.800">
-          DM
-        </Avatar>
+        <HStack alignItems="center" mt={5}>
+          <Avatar size="md" bg="secondary.800">
+            DM
+          </Avatar>
+          <VStack ml={5}>
+            <Text fontSize="lg" bold>
+              Diego Muniz
+            </Text>
+            <Text fontSize="xs">Desenvolvedor</Text>
+          </VStack>
+        </HStack>
       </VStack>
       <VStack>
         <Divider />
@@ -63,7 +75,7 @@ export function AccountView() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={item.onPress}>
                 <HStack
                   my={3}
                   mx={5}
@@ -72,7 +84,7 @@ export function AccountView() {
                   justifyContent="space-between"
                 >
                   <HStack display="flex" alignItems="center">
-                    <MaterialIcons name={item.iconName} size={24} />
+                    <MaterialIcons color={theme.colors.text[500]} name={item.iconName} size={24} />
                     <VStack>
                       <Text ml={4} fontSize="md" bold>
                         {item.title}
@@ -84,7 +96,9 @@ export function AccountView() {
                       ) : null}
                     </VStack>
                   </HStack>
-                  {item.arrowRightIcon ? <MaterialIcons name="arrow-right" size={24} /> : null}
+                  {item.arrowRightIcon ? (
+                    <MaterialIcons name="arrow-right" size={24} color={theme.colors.text[500]} />
+                  ) : null}
                 </HStack>
               </TouchableOpacity>
               <Divider my="2" />

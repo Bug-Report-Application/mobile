@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Actionsheet, Box, Divider, FlatList, HStack, Text, VStack, theme } from 'native-base';
+import { Divider, FlatList, HStack, Text, VStack, theme } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
@@ -8,14 +8,13 @@ import { SelectLanguage } from '../../../atoms';
 
 export function SettingsView() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenTheme, setIsOpenTheme] = useState(false);
   const { goBack } = useNavigation();
 
   const appData = [
     {
       id: 1,
       title: 'Notificações',
-      // subtitle: 'Selecione a linguagem de sua escolha',
+      subtitle: 'Selecione se deseja receber notificações',
       iconName: 'notifications-none',
       arrowRightIcon: true,
     },
@@ -30,51 +29,11 @@ export function SettingsView() {
       arrowRightIcon: false,
       onPress: () => setIsOpen(true),
     },
-    {
-      id: 2,
-      title: 'Aparência',
-      subtitle: 'Escolha entre claro, escuro ou padrão',
-      iconName: 'brightness-medium',
-      arrowRightIcon: false,
-      onPress: () => setIsOpenTheme(true),
-    },
   ];
 
   return (
     <>
       <SelectLanguage isOpen={isOpen} setIsOpen={setIsOpen} />
-
-      <Actionsheet isOpen={isOpenTheme} onClose={() => setIsOpenTheme(!isOpenTheme)}>
-        <Actionsheet.Content>
-          <Box w="100%" px={4} mb={2} display="flex" flexDirection="row" alignItems="center">
-            <MaterialIcons name="brightness-medium" size={24} color={theme.colors.primary[600]} />
-            <Text fontSize="lg" ml="2">
-              Selecione a aparência
-            </Text>
-          </Box>
-          <Actionsheet.Item
-            onPress={() => {
-              setIsOpenTheme(!isOpenTheme);
-            }}
-          >
-            Claro
-          </Actionsheet.Item>
-          <Actionsheet.Item
-            onPress={() => {
-              setIsOpenTheme(!isOpenTheme);
-            }}
-          >
-            Escuro
-          </Actionsheet.Item>
-          <Actionsheet.Item
-            onPress={() => {
-              setIsOpenTheme(!isOpenTheme);
-            }}
-          >
-            Padrão do dispositivo
-          </Actionsheet.Item>
-        </Actionsheet.Content>
-      </Actionsheet>
 
       <VStack testID="Profile-view_VStack" flex={1}>
         <VStack p={5} backgroundColor={theme.colors.white}>

@@ -10,7 +10,6 @@ export function ResetPasswordFormOrganism() {
   const formMethods = useForm({
     mode: 'all',
     defaultValues: {
-      email: null,
       currentPassword: null,
       newPassword: null,
       confirmNewPassword: null,

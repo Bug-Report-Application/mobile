@@ -26,6 +26,30 @@
       "info": "If the registered email is found, you will receive an email with the information to reset the password."
     }
   },
+  "accountViews": {
+    "menu": {
+      "profile": {
+        "title": "Profile",
+        "subtitle": "View and edit your information"
+      },
+      "security": {
+        "title": "Security",
+        "subtitle": "Access data and more"
+      },
+      "settings": {
+        "title": "Settings",
+        "subtitle": "Application, layout and more"
+      },
+      "about": {
+        "title": "About",
+        "subtitle": "Application information"
+      }
+    },
+    "logout": "Exit the application"
+  },
+  "homeViews": {
+    "hello": "Hello, {{name}}"
+  },
   "form": {
     "required": "{{field}} is required.",
     "format": "The field format is invalid."

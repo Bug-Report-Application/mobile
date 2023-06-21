@@ -26,6 +26,30 @@
       "info": "Se o e-mail cadastrado for encontrado, você receberá um e-mail com as informações para redefinir a senha."
     }
   },
+  "accountViews": {
+    "menu": {
+      "profile": {
+        "title": "Perfil",
+        "subtitle": "Visualize e edite suas informações"
+      },
+      "security": {
+        "title": "Segurança",
+        "subtitle": "Dados de acesso e mais"
+      },
+      "settings": {
+        "title": "Configuração",
+        "subtitle": "Aplicativo, layout e mais"
+      },
+      "about": {
+        "title": "Sobre",
+        "subtitle": "Informações do aplicativo"
+      }
+    },
+    "logout": "Sair do aplicativo"
+  },
+  "homeViews": {
+    "hello": "Olá, {{name}}"
+  },
   "form": {
     "required": "{{field}} é obrigatório.",
     "format": "O formato do campo é inválido."

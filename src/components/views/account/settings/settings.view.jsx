@@ -80,7 +80,7 @@ export function SettingsView() {
         <VStack p={5} backgroundColor={theme.colors.white}>
           <HStack alignItems="center" justifyContent="space-between">
             <TouchableOpacity onPress={goBack}>
-              <MaterialIcons name="close" size={28} color={theme.colors.text[500]} />
+              <MaterialIcons name="keyboard-arrow-left" size={32} color={theme.colors.text[500]} />
             </TouchableOpacity>
             <Text bold fontSize="lg">
               Configurações

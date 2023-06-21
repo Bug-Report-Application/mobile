@@ -14,7 +14,7 @@ export function LayoutProvider({ children }) {
       const lang = await AsyncStorage.getItem('@language');
       i18n.changeLanguage(lang ? lang : 'pt');
     })();
-  }, []);
+  });
 
   const onChangeLanguage = useCallback(async (lang) => {
     await AsyncStorage.setItem('@language', lang);

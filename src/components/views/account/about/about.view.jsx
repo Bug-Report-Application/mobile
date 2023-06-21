@@ -12,7 +12,7 @@ export function AboutView() {
   const date = new Date().toString();
 
   return (
-    <VStack testID="Profile-view_VStack" flex={1}>
+    <VStack testID="About-view_VStack" flex={1}>
       <VStack p={5} backgroundColor={theme.colors.white}>
         <HStack alignItems="center" justifyContent="space-between">
           <TouchableOpacity onPress={goBack}>

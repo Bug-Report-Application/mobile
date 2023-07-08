@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import { HStack, Text, VStack, theme } from 'native-base';
 import { MaterialIcons } from '@expo/vector-icons';
 
-export function MenuItemAccountMolecule({ iconName, title, subtitle, arrowRightIcon, onPress }) {
+export function MenuItemAccountAtom({ iconName, title, subtitle, arrowRightIcon, onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <HStack my={3} mx={5} display="flex" alignItems="center" justifyContent="space-between">

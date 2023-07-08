@@ -1,16 +1,19 @@
 import React, { useMemo } from 'react';
 
-import { Divider, FlatList, VStack } from 'native-base';
+import { Button, VStack, theme } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
+import { MaterialIcons } from '@expo/vector-icons';
 
-import { MenuItemAccountMolecule } from '../../molecules';
+import { AccountMenuListMolecule } from '../../molecules';
+import { useAuthContext } from '../../contexts';
 
 export function AccountMenuOrganism() {
   const { navigate } = useNavigation();
   const { t } = useTranslation();
+  const { signOut } = useAuthContext();
 
-  const menuList = useMemo(
+  const flatListData = useMemo(
     () => [
       {
         id: 1,
@@ -50,22 +53,16 @@ export function AccountMenuOrganism() {
 
   return (
     <VStack testID="AccountMenuOrganism-VStack">
-      <FlatList
-        data={menuList}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <>
-            <MenuItemAccountMolecule
-              iconName={item.iconName}
-              title={t(`${item.title}`)}
-              subtitle={t(`${item.subtitle}`)}
-              arrowRightIcon={item.arrowRightIcon}
-              onPress={item.onPress}
-            />
-            <Divider my="2" />
-          </>
-        )}
-      />
+      <AccountMenuListMolecule flatListData={flatListData} />
+      <Button
+        mt="5"
+        variant="ghost"
+        size="lg"
+        leftIcon={<MaterialIcons name="logout" color={theme.colors.primary[800]} size={24} />}
+        onPress={signOut}
+      >
+        {t('accountViews.logout')}
+      </Button>
     </VStack>
   );
 }
